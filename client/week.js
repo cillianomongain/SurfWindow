@@ -33,19 +33,31 @@ Template.week.helpers({
 
             var a = [];
             var b = [];
+            var c = [];
             for(var i in obj){
                 if(obj.hasOwnProperty(i)){
                     a.push(i);
                     b.push(obj[i]);
+                    var day = {date:i, cols:obj[i]};
+                    c.push(day);
                 }
             }
 
             console.log(a);
-            return a;
+            console.log(b);
+            console.log(c);
+            return c;
 
     },
-    cols: function() {
-
+    spots: function () {
+        return Spots.find();
+    },
+    dayName: function (index) {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) {
+            var dt = moment(latestData.initDate, "YYYY-MM-DD HH:mm:ss").add(index, 'd');
+            return dt.format('dddd');
+        }
     }
 });
 

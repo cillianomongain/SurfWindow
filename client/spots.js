@@ -1,7 +1,5 @@
 Template.spots.helpers({
-    spots: function () {
-        return Spots.find();
-    }
+
 });
 
 Template.spots.events({

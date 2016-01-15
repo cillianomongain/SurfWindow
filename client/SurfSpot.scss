@@ -4,30 +4,32 @@ body {
   font-size: 10px;
 }
 table {
-  border-spacing: 1px;
-  border-collapse: collapse;
+  border-spacing: 5px;
+  //border-collapse: collapse;
 }
 .dot {
-  width: 15px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 5px;
   background-color: lightgrey;
+  margin-top: 5px;
   margin-bottom: 5px;
+  float: left;
 }
 .colour1{
   background-color: yellowgreen;
 }
 .colour2 {
-  background-color: lightblue;
+  background-color: #2fe6ab;
 }
 .colour3 {
-  background-color: #e68191;
+  background-color: #1bd1e6;
 }
 .colour4 {
-  background-color: #ba6ce6;
+  background-color: #1390e6;
 }
 .colour5 {
-  background-color: #e63c3b;
+  background-color: #911ae6;
 }
 .blank {
   background-color: #f7f7f7;
@@ -75,4 +77,19 @@ table {
 }
 #add-spot {
   display: none;
+}
+.spot-title {
+  line-height: 20px;
+  font-weight: 600;
+
+  .dot {
+    margin-right: 5px;
+  }
+}
+tr.spots-row td:first-child {
+  width: 100px;
+}
+td.date {
+  border-bottom: 5px solid #e4e4e4;
+  margin-right: 4px;
 }

@@ -1,21 +1,23 @@
 <template name="week">
     <table id="week">
         <tr>
+            <td></td>
             {{#each days}}
-            <td colspan="7">Day</td>
+            <td colspan="{{cols}}" class="date">{{dayName @index}} {{this.date}}</td>
             {{/each}}
         </tr>
-        <tr>
-            {{#each date}}
-                <td>{{this}}</td>
-            {{/each}}
-        </tr>
-        <tr>
-            {{#each column}}
-                <td>{{this}}</td>
-            {{/each}}
-        </tr>
+        <!--<tr>-->
+            <!--<td></td>-->
+            <!--{{#each date}}-->
+                <!--<td>{{this}}</td>-->
+            <!--{{/each}}-->
+        <!--</tr>-->
         <tr class="spots-row">
+            <td>
+                {{#each spots}}
+                    <div class="spot-title"><div class="dot {{colour}}"></div> {{name}}</div>
+                {{/each}}
+            </td>
             {{#each column}}
                 <td>
                     {{#each swell @index}}

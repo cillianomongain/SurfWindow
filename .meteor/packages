@@ -25,3 +25,4 @@ mrt:cheerio
 npm-container
 http
 fourseven:scss
+momentjs:moment
