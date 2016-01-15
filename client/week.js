@@ -30,24 +30,14 @@ Template.week.helpers({
     },
     days: function () {
             var obj = getDates();
-
-            var a = [];
-            var b = [];
             var c = [];
             for(var i in obj){
                 if(obj.hasOwnProperty(i)){
-                    a.push(i);
-                    b.push(obj[i]);
                     var day = {date:i, cols:obj[i]};
                     c.push(day);
                 }
             }
-
-            console.log(a);
-            console.log(b);
-            console.log(c);
             return c;
-
     },
     spots: function () {
         return Spots.find();
@@ -65,7 +55,6 @@ getDates = function() {
     var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
     if (latestData) {
         var days = latestData.date;
-        var array = [];
         var obj = {};
         for (var i = 0, j = days.length; i < j; i++) {
             if (obj[days[i]]) {

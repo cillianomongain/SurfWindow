@@ -66,15 +66,42 @@ table {
   left: 0;
 }
 .add-spot-container {
-  width: 400px;
+  width: 480px;
   background-color: white;
   border-radius: 10px;
   z-index: 100;
   position: absolute;
   padding: 30px;
   left: 50%;
-  margin-left:-200px;
+  margin-left:-240px;
+
+  table {
+    width: 100%;
+
+    td {
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .circle-range-select-wrapper {
+     margin-left: 25px;
+    }
+  }
+
+  .slider {
+    margin-top:20px;
+    margin-bottom:20px;
+  }
 }
+#swell-size-min:after, #swell-size-max:after {
+  content: "m";
+}
+#wind-min:after, #wind-max:after {
+  content: "kts";
+}
+
+
 #add-spot {
   display: none;
 }

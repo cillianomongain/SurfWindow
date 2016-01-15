@@ -26,3 +26,5 @@ npm-container
 http
 fourseven:scss
 momentjs:moment
+jameslefrere:autoform-jquery-knob
+rcy:nouislider
