@@ -1,0 +1,28 @@
+<template name="week">
+    <table id="week">
+        <tr>
+            {{#each days}}
+            <td colspan="7">Day</td>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each date}}
+                <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each column}}
+                <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        <tr class="spots-row">
+            {{#each column}}
+                <td>
+                    {{#each swell @index}}
+                        <div class="dot {{this}}"></div>
+                    {{/each}}
+                </td>
+            {{/each}}
+        </tr>
+    </table>
+</template>

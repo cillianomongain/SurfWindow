@@ -1,0 +1,55 @@
+<head>
+    <title>SurfSpot</title>
+</head>
+
+<body>
+{{> week}}
+{{> spots}}
+{{> addSpot}}
+</body>
+
+<template name="addSpot">
+    <div id="add-spot">
+        <div class="overlay"></div>
+        <div class="add-spot-container">
+            <form>
+                <table>
+                    <tr>
+                        <td colspan="2"><input type="text" id="name" placeholder="Name"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="swellSizeMin" placeholder="Swell Size Min"></td>
+                        <td><input type="number" id="swellSizeMax" placeholder="Swell Size Max"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="swellDirMin" placeholder="Swell Direction Min"></td>
+                        <td><input type="number" id="swellDirMax" placeholder="Swell Direction Max"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="windStrengthMin" placeholder="Wind Strength Min"></td>
+                        <td><input type="number" id="windStrengthMax" placeholder="Wind Strength Max"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="windDirMin" placeholder="Wind Direction Min"></td>
+                        <td><input type="number" id="windDirMax" placeholder="Wind Direction Max"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <select id="colour">
+                                <option value="colour1">Green</option>
+                                <option value="colour2">Blue</option>
+                                <option value="colour3">Pink</option>
+                                <option value="colour4">Purple</option>
+                                <option value="colour5">Red</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button id="add-spot-submit">Add Spot</button>
+            </form>
+        </div>
+    </div>
+    <button id="update-forecast">Update Forecast</button>
+</template>
+
+
