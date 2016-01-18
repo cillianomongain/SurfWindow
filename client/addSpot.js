@@ -31,6 +31,12 @@ Template.addSpot.events({
     },
     'click .overlay': function () {
         $("#add-spot").fadeOut();
+    },
+    'click .colour-select': function (event) {
+        $(".colour-select").removeClass("selected");
+        $(event.target).addClass("selected");
+        var colour = $(event.target).data("colour");
+        Session.set("selectedColour", colour);
     }
 
 });

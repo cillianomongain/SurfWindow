@@ -1,0 +1,46 @@
+<template name="addSpot">
+    <div id="add-spot">
+        <div class="overlay"></div>
+        <div class="add-spot-container">
+
+
+            <form>
+
+                <table>
+                    <tr>
+                        <td><h1>SWELL</h1></td>
+                        <td><h1>WIND</h1></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="circle-range-select" id="swell-direction-circle" data-auto-init value="230;310"></td>
+                        <td><input type="text" class="circle-range-select" id="wind-direction-circle" data-auto-init value="50;140"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="swell-size-range" class="slider"></div>
+                            <h2><span id="swell-size-min">0m</span> - <span id="swell-size-max">0m</span></h2>
+                        </td>
+                        <td>
+                            <div id="wind-range" class="slider"></div>
+                            <h2><span id="wind-min">0m</span> - <span id="wind-max">0m</span></h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+
+                            <div class="colour-select colour1 selected" data-colour="colour1"></div>
+                            <div class="colour-select colour2" data-colour="colour2"></div>
+                            <div class="colour-select colour3" data-colour="colour3"></div>
+                            <div class="colour-select colour4" data-colour="colour4"></div>
+                            <div class="colour-select colour5" data-colour="colour5"></div>
+
+                        </td>
+                    </tr>
+                </table>
+                <input type="text" id="name" placeholder="Name">
+                <button id="add-spot-submit">Add Spot</button>
+            </form>
+        </div>
+    </div>
+
+</template>

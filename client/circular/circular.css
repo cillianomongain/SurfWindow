@@ -9,7 +9,7 @@ input.circle-range-select {
     margin: 0.65em;
     padding: 0.65em !important;
     border-radius: 50%;
-    border: 1.3em solid #ededed;
+    border: 5px solid rgba(237, 237, 237, 0.15);
     cursor: default; }
 .circle-range-select-wrapper .handle {
     position: absolute;
@@ -42,4 +42,8 @@ input.circle-range-select {
     right: 0;
     margin-top: -0.5em;
     font-size: 0.85rem;
-    text-align: center; }
+    text-align: center;
+}
+.values {
+    font-weight: bold;
+}

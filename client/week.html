@@ -1,9 +1,12 @@
 <template name="week">
     <table id="week">
         <tr>
-            <td></td>
+            <td><div id="update-forecast"><i class="fa fa-repeat"></i></div></td>
             {{#each days}}
-            <td colspan="{{cols}}" class="date">{{dayName @index}} {{this.date}}</td>
+            <td colspan="{{cols}}" class="date">
+                <div class="vertical-line"></div>
+                {{dayName @index}}<br/>
+                <span class="date-number">{{this.date}}</span></td>
             {{/each}}
         </tr>
         <!--<tr>-->
@@ -15,7 +18,7 @@
         <tr class="spots-row">
             <td>
                 {{#each spots}}
-                    <div class="spot-title"><div class="dot {{colour}}"></div> {{name}}</div>
+                    <div class="spot-title"><div class="dot {{colour}}"></div> {{name}}</div><div class="line"></div>
                 {{/each}}
             </td>
             {{#each column}}
