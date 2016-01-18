@@ -32,7 +32,7 @@ input.circle-range-select {
 .circle-range-select-wrapper .selected-range {
     position: absolute;
     z-index: 1;
-    color: #2caea9; }
+    color: rgba(255, 248, 249, 0.89); }
 .circle-range-select-wrapper .values {
     pointer-events: none;
     position: absolute;

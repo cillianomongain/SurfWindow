@@ -8,26 +8,17 @@ Template.addSpot.events({
             name: $('input#name').val(),
             swellDirMin: swellDirection.split(";")[0],
             swellDirMax: swellDirection.split(";")[1],
-            swellSizeMin: $('input#swellSizeMin').val(),
-            swellSizeMax: $('input#swellSizeMax').val(),
-            windStrengthMin: $('input#windStrengthMin').val(),
-            windStrengthMax: $('input#windStrengthMax').val(),
+            swellSizeMin: $('#swell-size-min').text(),
+            swellSizeMax: $('#swell-size-max').text(),
+            windStrengthMin: $('#wind-min').text(),
+            windStrengthMax: $('#wind-max').text(),
             windDirMin: windDirection.split(";")[0],
             windDirMax: windDirection.split(";")[1],
-            colour: $('select#colour').val()
+            colour: Session.get("selectedColour")
         };
         Meteor.call("addSpot", spot);
         console.log("Added");
         $("#add-spot").fadeOut();
-    },
-    'click button': function () {
-        Meteor.call("getGuru", function (error, result) {
-            if (error) {
-                consol.log(error);
-            }
-            console.log("Result: " + result);
-            Session.set("latestWind", result);
-        });
     },
     'click .overlay': function () {
         $("#add-spot").fadeOut();
@@ -37,8 +28,23 @@ Template.addSpot.events({
         $(event.target).addClass("selected");
         var colour = $(event.target).data("colour");
         Session.set("selectedColour", colour);
+
+        //Set colour of wave/wind gauges
+        //$(".noUi-connect").addClass(colour);
+        //$(".selected-range").addClass(colour);
+
     }
 
+});
+
+Template.addSpot.helpers({
+    currentColour: function() {
+        if (Session.get("selectedColour")) {
+            return Session.get("selectedColour");
+        } else {
+            return "colour1";
+        }
+    }
 });
 
 Template.addSpot.onRendered(function () {

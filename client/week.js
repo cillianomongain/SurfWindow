@@ -50,6 +50,17 @@ Template.week.helpers({
         }
     }
 });
+Template.week.events({
+    'click #update-forecast': function () {
+        Meteor.call("getGuru", function (error, result) {
+            if (error) {
+                consol.log(error);
+            }
+            console.log("Result: " + result);
+            Session.set("latestWind", result);
+        });
+    }
+});
 
 getDates = function() {
     var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
