@@ -9,12 +9,46 @@
                 <span class="date-number">{{this.date}}</span></td>
             {{/each}}
         </tr>
-        <!--<tr>-->
-            <!--<td></td>-->
-            <!--{{#each date}}-->
-                <!--<td>{{this}}</td>-->
-            <!--{{/each}}-->
-        <!--</tr>-->
+        <tr class="forecast wave-direction">
+            <td>Wave Direction</td>
+            {{#each waveDirection}}
+                <td style="opacity:{{waveDirectionOpacity @index}}">
+                    <img class="arrow" src="images/arrow.svg" data-rotate="{{this}}" />
+                </td>
+            {{/each}}
+        </tr>
+        <tr class="forecast wave-height">
+            <td>Wave Height (m)</td>
+            {{#each waveHeight}}
+                <td style="opacity:{{waveOpacity this}}">
+                    {{this}}
+                </td>
+            {{/each}}
+        </tr>
+        <tr class="forecast wave-period">
+            <td>Wave Period (s)</td>
+            {{#each wavePeriod}}
+                <td style="opacity:{{wavePeriodOpacity this}}">
+                    {{parseInt this}}
+                </td>
+            {{/each}}
+        </tr>
+        <tr class="forecast wind-direction">
+            <td>Wind Direction</td>
+            {{#each windDirection}}
+                <td style="opacity:{{windDirectionOpacity @index}}">
+                    <img class="arrow" src="images/arrow.svg" data-rotate="{{this}}" />
+                </td>
+            {{/each}}
+        </tr>
+        <tr class="forecast wind">
+            <td>Wind (kts)</td>
+            {{#each wind}}
+                <td style="opacity:{{windOpacity this}}">
+                    {{parseInt this}}
+                </td>
+            {{/each}}
+        </tr>
         <tr class="spots-row">
             <td>
                 {{#each spots}}
@@ -23,11 +57,13 @@
             </td>
             {{#each column}}
                 <td>
-                    {{#each swell @index}}
+                    {{#each dots @index}}
                         <div class="dot {{this}}"></div>
                     {{/each}}
                 </td>
             {{/each}}
         </tr>
+
+
     </table>
 </template>

@@ -3,11 +3,59 @@ Template.week.helpers({
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
         if (latestData) return latestData.waveHeight;
     },
+    waveHeight: function () {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.waveHeight;
+    },
+    wavePeriod: function () {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.wavePeriod;
+    },
+    waveDirection: function () {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.waveDirection;
+    },
+    wind: function () {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.windSpeed;
+    },
+    windDirection: function () {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.windDirection;
+    },
+    parseInt: function (number) {
+          return parseInt(number);
+    },
+    waveDirectionOpacity: function (index) {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) {
+            var number = latestData.waveHeight[index];
+            return (number/10)*2;
+        }
+
+    },
+    waveOpacity: function (number) {
+        return (number/10)*2;
+    },
+    wavePeriodOpacity: function (number) {
+        return (number-10)*0.1;
+    },
+    windDirectionOpacity: function (index) {
+        var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) {
+            var number = latestData.windSpeed[index];
+            return number*0.03;
+        }
+
+    },
+    windOpacity: function (number) {
+        return number*0.04;
+    },
     date: function () {
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
         if (latestData) return latestData.date;
     },
-    swell: function (index) {
+    dots: function (index) {
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
         var spots = Spots.find();
         var spotArray = [];
@@ -61,6 +109,25 @@ Template.week.events({
         });
     }
 });
+
+Template.week.onCreated(function () {
+    console.log("created");
+    setTimeout(function(){ rotateArrows(); }, 3000);
+});
+
+rotateArrows = function() {
+    $('img.arrow').each(function () {
+        var deg = $(this).data('rotate') || 0;
+        var rotate = 'rotate(' + $(this).data('rotate') + 'deg)';
+        $(this).css({
+            '-webkit-transform': rotate,
+            '-moz-transform': rotate,
+            '-o-transform': rotate,
+            '-ms-transform': rotate,
+            'transform': rotate
+        });
+    });
+};
 
 getDates = function() {
     var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();

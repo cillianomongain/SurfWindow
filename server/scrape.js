@@ -25,21 +25,23 @@ Meteor.startup(function () {
                 var forecast = data.fcst;
                 var three = forecast["3"];
                 //console.log(three);
+                
+                var totalPoints = 56;
 
                 var entryId = Data.insert({
-                    windSpeed: three["WINDSPD"],
-                    windGust: three["GUST"],
-                    windDirection: three["WINDDIR"],
-                    waveHeight: three["HTSGW"],
-                    wavePeriod: three["PERPW"],
-                    waveDirection: three["DIRPW"],
-                    temperature: three["TMP"],
-                    rain: three["APCP"],
-                    highCloud: three["HCDC"],
-                    midCloud: three["MCDC"],
-                    lowCloud: three["LCDC"],
-                    time: three["hr_h"],
-                    date: three["hr_d"],
+                    windSpeed: three["WINDSPD"].slice(0,totalPoints),
+                    windGust: three["GUST"].slice(0,totalPoints),
+                    windDirection: three["WINDDIR"].slice(0,totalPoints),
+                    waveHeight: three["HTSGW"].slice(0,totalPoints),
+                    wavePeriod: three["PERPW"].slice(0,totalPoints),
+                    waveDirection: three["DIRPW"].slice(0,totalPoints),
+                    temperature: three["TMP"].slice(0,totalPoints),
+                    rain: three["APCP"].slice(0,totalPoints),
+                    highCloud: three["HCDC"].slice(0,totalPoints),
+                    midCloud: three["MCDC"].slice(0,totalPoints),
+                    lowCloud: three["LCDC"].slice(0,totalPoints),
+                    time: three["hr_h"].slice(0,totalPoints),
+                    date: three["hr_d"].slice(0,totalPoints),
                     initDate: three["initdate"]
                 });
 

@@ -1,0 +1,30 @@
+.forecast {
+  font-size: 10px;
+
+  td {
+    text-align: center;
+  }
+
+  td:first-child {
+    text-align: left;
+  }
+}
+.wave-period {
+  //opacity: 0.8;
+  color: rgb(202, 177, 36);
+}
+.wave-direction img, .wind-direction img  {
+  width: 15px;
+  height: 15px;
+  transition: all 400ms;
+}
+.wind, .wind-direction {
+  color: rgb(255, 248, 249);
+}
+.wind-direction td, .wave-direction td  {
+  padding-top: 20px;
+}
+
+.wind td {
+  padding-bottom: 80px;
+}
