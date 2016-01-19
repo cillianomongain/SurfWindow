@@ -1,5 +1,14 @@
+table {
+  border-spacing: 5px;
+  //border-collapse: collapse;
+}
+table#week {
+  margin-top: 8%;
+  max-width: 1400px;
+}
 .forecast {
   font-size: 10px;
+  font-weight: 700;
 
   td {
     text-align: center;

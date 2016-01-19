@@ -19,9 +19,11 @@ Template.addSpot.events({
         Meteor.call("addSpot", spot);
         console.log("Added");
         $("#add-spot").fadeOut();
+        $("#main-page").css("transform", "scale(0.9)").fadeIn().css("transform", "scale(1.0)");
     },
     'click .overlay': function () {
         $("#add-spot").fadeOut();
+        $("#main-page").css("transform", "scale(0.9)").fadeIn().css("transform", "scale(1.0)");
     },
     'click .colour-select': function (event) {
         $(".colour-select").removeClass("selected");
