@@ -196,44 +196,7 @@ body {
 #add-spot {
   display: none;
 }
-.spot-title {
-  line-height: 20px;
-  font-weight: 600;
 
-  .dot {
-    margin-right: 5px;
-  }
-}
-tr.spots-row td:first-child {
-  min-width: 150px;
-}
-td.date {
-  margin-right: 4px;
-  padding-bottom: 50px;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-
-  .date-number {
-    opacity: 0.5;
-  }
-}
-
-.line {
-  position: absolute;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  width: 1400px;
-  margin-top: -11px;
-  z-index: -10;
-}
-
-.vertical-line {
-  position: absolute;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  height: 500px;
-  margin-left: -3px;
-  z-index: -10;
-}
 
 .noUi-target {
   border: none;

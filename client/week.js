@@ -107,7 +107,13 @@ Template.week.events({
             console.log("Result: " + result);
             Session.set("latestWind", result);
         });
+    },
+    'click .spot-title': function () {
+        console.log(this);
+        Session.set("selectedSpot", this);
+        showSpotModal();
     }
+
 });
 
 Template.week.onCreated(function () {

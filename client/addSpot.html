@@ -12,12 +12,12 @@
                         <td><h1>WIND</h1></td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="circle-range-select" id="swell-direction-circle" data-auto-init value="230;310"></td>
-                        <td><input type="text" class="circle-range-select" id="wind-direction-circle" data-auto-init value="50;140"></td>
+                        <td id="circle1"><input type="text" class="circle-range-select" id="swell-direction-circle" data-auto-init value="{{swellRange}}"></td>
+                        <td id="circle2"><input type="text" class="circle-range-select" id="wind-direction-circle" data-auto-init value="50;140"></td>
                     </tr>
                     <tr>
                         <td>
-                            <div id="swell-size-range" class="slider"></div>
+                            <div id="swell-range" class="slider"></div>
                             <h2><span id="swell-size-min">0m</span> - <span id="swell-size-max">0m</span></h2>
                         </td>
                         <td>
@@ -44,6 +44,9 @@
                 </table>
                 <input type="text" id="name" placeholder="Enter Name">
                 <button id="add-spot-submit" class="{{currentColour}}">Add Spot</button>
+                {{#if spotExists}}
+                    <div id="delete-spot">Delete Spot</div>
+                {{/if}}
             </form>
         </div>
     </div>

@@ -242,6 +242,13 @@
 
     };
 
+    $.fn.refreshCircles = function() {
+        return this.each(function() {
+            drawCircle($(this), 20, 100);
+        });
+
+    };
+
     $(function() { $('input.circle-range-select[data-auto-init]').lcnCircleRangeSelect(); });
 
     return $.fn.lcnCircleRangeSelect;
