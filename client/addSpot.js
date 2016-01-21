@@ -132,12 +132,9 @@ showSpotModal = function () {
         $('#swell-range').val([spot.swellSizeMin, spot.swellSizeMax]);
         $('#wind-range').val([spot.windStrengthMin, spot.windStrengthMax]);
 
-        //Delete and re-render circles
-        $('.circle-range-select-wrapper').hide();
-        $('td#circle1').html('<input type="text" class="circle-range-select" id="swell-direction-circle" data-auto-init value="' + spot.swellDirMin + ';' + spot.swellDirMax + '">');
-        $('td#circle2').html('<input type="text" class="circle-range-select" id="wind-direction-circle" data-auto-init value="' + spot.windDirMin + ';' + spot.windDirMax + '">');
-        $('#swell-direction-circle').lcnCircleRangeSelect();
-        $('#wind-direction-circle').lcnCircleRangeSelect();
+        //set new values on circles
+        $('#swell-direction-circle').val(spot.swellDirMin+";"+spot.swellDirMax).trigger('change');
+        $('#wind-direction-circle').val(spot.windDirMin+";"+spot.windDirMax).trigger('change');
 
         $(".colour-select").removeClass("selected");
         $(".colour-select." + spot.colour).addClass("selected");
@@ -149,12 +146,9 @@ showSpotModal = function () {
         $('#swell-range').val([1, 4]);
         $('#wind-range').val([0, 20]);
 
-        //Delete and re-render circles
-        $('.circle-range-select-wrapper').hide();
-        $('td#circle1').html('<input type="text" class="circle-range-select" id="swell-direction-circle" data-auto-init value="240;300">');
-        $('td#circle2').html('<input type="text" class="circle-range-select" id="wind-direction-circle" data-auto-init value="60;120">');
-        $('#swell-direction-circle').lcnCircleRangeSelect();
-        $('#wind-direction-circle').lcnCircleRangeSelect();
+        //set new values on circles
+        $('#swell-direction-circle').val("240;300").trigger('change');
+        $('#wind-direction-circle').val("60;120").trigger('change');
 
         $(".colour-select").removeClass("selected");
         $(".colour-select.colour3").addClass("selected");

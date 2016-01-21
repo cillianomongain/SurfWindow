@@ -104,8 +104,8 @@ Template.week.events({
             if (error) {
                 consol.log(error);
             }
+            rotateArrows();
             console.log("Result: " + result);
-            Session.set("latestWind", result);
         });
     },
     'click .spot-title': function () {
