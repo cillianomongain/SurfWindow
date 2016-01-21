@@ -7,6 +7,10 @@ Template.week.helpers({
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
         if (latestData) return latestData.waveHeight;
     },
+    waveHeight2: function () {
+        var latestData = Data2.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
+        if (latestData) return latestData.waveHeight;
+    },
     wavePeriod: function () {
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
         if (latestData) return latestData.wavePeriod;
@@ -25,6 +29,9 @@ Template.week.helpers({
     },
     parseInt: function (number) {
           return parseInt(number);
+    },
+    singleDecimal: function (number) {
+        return number.toFixed(1);
     },
     waveDirectionOpacity: function (index) {
         var latestData = Data.find({}, {sort: {initDate: -1}, limit: 1}).fetch().pop();
@@ -102,7 +109,14 @@ Template.week.events({
     'click #update-forecast': function () {
         Meteor.call("getGuru", function (error, result) {
             if (error) {
-                consol.log(error);
+                console.log(error);
+            }
+            rotateArrows();
+            console.log("Result: " + result);
+        });
+        Meteor.call("getWaves", 54, -10, function (error, result) {
+            if (error) {
+                console.log(error);
             }
             rotateArrows();
             console.log("Result: " + result);

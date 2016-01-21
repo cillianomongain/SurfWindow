@@ -18,6 +18,14 @@
             {{/each}}
         </tr>
         <tr class="forecast wave-height">
+            <td>Wave Height (m) NWW3</td>
+            {{#each waveHeight2}}
+                <td style="opacity:{{waveOpacity this}}">
+                    {{singleDecimal this}}
+                </td>
+            {{/each}}
+        </tr>
+        <tr class="forecast wave-height">
             <td>Wave Height (m)</td>
             {{#each waveHeight}}
                 <td style="opacity:{{waveOpacity this}}">
